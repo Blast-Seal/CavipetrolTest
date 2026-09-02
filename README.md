@@ -47,7 +47,7 @@ Si el proyecto usa variables de entorno:
 1. En la terminal entra al directorio:
 ```bash
     cd CavipetrolTest
-    cd Backend
+    cd ApiClientes
     cd CavipetrolTestBack
     cd CavipetrolTestBack.API
 ```
@@ -73,7 +73,7 @@ Si el proyecto usa variables de entorno:
 1. En la terminal entra al directorio:
 ```bash
     cd CavipetrolTest
-    cd Frontend
+    cd ClientesFrontend
     cd CavipetrolTestFront
 ```
 
