@@ -1,0 +1,87 @@
+<h2 class="text-xl font-bold text-amber-50">Busqueda de clientes</h2>
+<div class="mb-6 flex w-full max-w-md gap-2.5"> 
+
+  <div class="flex gap-2.5 margin-bottom: 1.5rem;">
+    <input 
+      type="text" 
+      [ngModel]="idBusqueda()" 
+      (ngModelChange)="idBusqueda.set($event)" 
+      placeholder="# Identificación" 
+      class="text-amber-50 border border-l-amber-300 focus:ring-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-2 p-2.5"
+    />
+    <button 
+      [disabled]="state.cargando() || !idBusqueda().trim()" 
+      (click)="ejecutarBusqueda()"
+      class="bg-amber-700 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded"
+    >
+      Buscar
+    </button>
+    <button 
+        [hidden]="state.cargando() || !idBusqueda().trim()"
+        (click)="state.limpiarBuscador(); idBusqueda.set('')"
+        class="bg-amber-700 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded"
+        >
+        Limpiar
+        </button>
+  </div>
+
+   
+</div>
+
+@if (state.cargando()) {
+<div class="flex items-center justify-center gap-2.5 p-4 bg-blue-950 text-gray-400 rounded-md">
+    Consultando base de datos, por favor espera...
+</div>
+}
+
+@if (state.error(); as mensajeError) {
+<div class="flex items-center justify-center gap-2.5 text-gray-900 bg-amber-50">
+    ⚠️ {{ mensajeError }}
+</div>
+} 
+
+@if (state.cliente(); as cliente) {
+<div class="rounded-lg border border-green-200 bg-green-50 p-6 shadow-sm max-w-xl mx-auto">    
+    <h3 class="mt-0 text-xl font-bold text-gray-900 border-b border-green-200 pb-3 mb-4">
+        Cliente
+    </h3>
+    
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 text-sm text-gray-900">
+
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Identificación:</strong> 
+        <span class="ml-1">{{ cliente.Identificacion }}</span>
+        </div>
+
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Nombre Completo:</strong> 
+        <span class="ml-1">{{ cliente.Nombre }} {{ cliente.Apellido }}</span>
+        </div>
+
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Correo Electrónico:</strong> 
+        <span class="ml-1 break-all">{{ cliente.Email }}</span>
+        </div>        
+        
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Creado Por:</strong> 
+        <span class="block sm:inline">{{ cliente.CreatedBy }}</span>
+        </div>        
+        
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Fecha de Creación:</strong> 
+        <span class="block sm:inline">{{ cliente.CreatedDate }}</span>
+        </div>        
+        
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Actualizado Por:</strong> 
+        <span class="block sm:inline">{{ cliente.UpdatedBy }}</span>
+        </div>
+                
+        <div class="sm:col-span-2">
+        <strong class="font-semibold text-gray-900 p-2.5">Fecha de Actualización:</strong> 
+        <span class="block sm:inline">{{ cliente.UpdatedDate }}</span>
+        </div>        
+    </div>
+</div>
+}

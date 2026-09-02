@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.Packaging" Version="7.9.0" />
+    <PackageReference Include="NuGet.Protocol" Version="7.9.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.7.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CavipetrolTestBack.DTOs\CavipetrolTestBack.DTOs.csproj" />
+    <ProjectReference Include="..\CavipetrolTestBack.Infrastructure\CavipetrolTestBack.Infrastructure.csproj" />
+    <ProjectReference Include="..\CavipetrolTestBack.Repositories\CavipetrolTestBack.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

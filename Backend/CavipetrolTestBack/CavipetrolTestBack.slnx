@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CavipetrolTestBack.API/CavipetrolTestBack.API.csproj" />
+  <Project Path="CavipetrolTestBack.Services/CavipetrolTestBack.Services.csproj" Id="2428f08e-7909-4089-a9c0-70eadfa01232" />
+  <Project Path="CavipetrolTestBack.Repositories/CavipetrolTestBack.Repositories.csproj" Id="575739e5-eb62-4131-98a4-f8dc5197e7e3" />
+  <Project Path="CavipetrolTestBack.DTOs/CavipetrolTestBack.DTOs.csproj" Id="8ebd7e33-80b5-4de4-a2a3-cc7ea598841f" />
+  <Project Path="CavipetrolTestBack.Infrastructure/CavipetrolTestBack.Infrastructure.csproj" Id="dfaa6eb2-1bfc-45dc-8b33-58053330ae42" />
+</Solution>
